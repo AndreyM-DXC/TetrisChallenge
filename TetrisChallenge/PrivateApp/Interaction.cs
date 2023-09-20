@@ -1,4 +1,6 @@
-﻿
+﻿using System;
+using System.Text;
+
 namespace TetrisChallenge
 {
     public interface IPlayer
@@ -16,6 +18,38 @@ namespace TetrisChallenge
         public GamePiece piece;
         /// <summary> Current Score </summary>
         public int score;
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine($"Piece: {piece}");
+            for (var i = 0; i < GameState.Height; i++)
+            {
+                sb.Append("#");
+                for (var j = 0; j < GameState.Width; j++)
+                {
+                    sb.Append(board[j, i] ? "[]" : " .");
+                }
+                sb.AppendLine("# " + i);
+            }
+            sb.AppendLine(new string('#', GameState.Width * 2 + 2));
+            return sb.ToString();
+        }
+
+        public void Parse(string text)
+        {
+            var i = 0;
+            foreach (var ch in text)
+            {
+                if (ch ==  '.' || ch == ']')
+                {
+                    var x = i % GameState.Width;
+                    var y = i / GameState.Width;
+                    board[x, y] = ch == ']';
+                    i++;
+                }
+            }
+        }
     }
 
     public class Command
@@ -29,6 +63,11 @@ namespace TetrisChallenge
         {
             this.offset = offset;
             this.rotation = rotation;
+        }
+
+        public override string ToString()
+        {
+            return $"Off: {offset} Rot: {rotation}";
         }
     }
 }

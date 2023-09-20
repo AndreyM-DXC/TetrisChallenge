@@ -43,7 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeMe\MishkinisAndrey\YetAnotherPlayer.cs" />
+    <Compile Include="CodeMe\MishkinisAndrey\Utils.cs" />
     <Compile Include="CodeMe\ConsolePlayer.cs" />
+    <Compile Include="CodeMe\EgemenCiftci\MyPlayer.cs" />
+    <Compile Include="CodeMe\LevandovskyiIllia\VirtualGameState.cs" />
+    <Compile Include="CodeMe\LevandovskyiIllia\MinStateBotPlayer.cs" />
     <Compile Include="PrivateApp\ConsoleRenderer.cs" />
     <Compile Include="PrivateApp\GamePiece.cs" />
     <Compile Include="PrivateApp\GameState.cs" />
