@@ -8,6 +8,8 @@ The only thing is that we will not play ourselves, but our bots will play.
   [][] [][][]   []   [][]     [] [][]  
 ```
 
+![](https://github.com/AndreyM-DXC/TetrisChallenge/blob/main/banner.png?raw=true)
+
 **Task:** Win the bot tournament!
 
 **Rules:**
